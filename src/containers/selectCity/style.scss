@@ -1,0 +1,105 @@
+#select-city{
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    .now-city{
+        font-size: 1.2rem;
+        color: #999;
+        background: #fff;
+        height: 4rem;
+        line-height: 4rem;
+        padding: 0 1.2rem;
+        border-bottom: 1px solid #ddd;
+        .now-city-tit{
+            float: left;
+        }
+        .now-city-ask{
+            float: right;
+        }
+    }
+    .now{
+        background: #fff;
+        height: 4rem;
+        line-height: 4rem;
+        padding: 0 1.2rem;
+        .city-name{
+            float: left;
+        }
+        .arrow-right{
+            float: right;
+            font-family: '宋体';
+            font-weight: 600;
+            color: #999;
+        }
+    }
+    .hot-city{
+        margin-top: 2rem;
+        font-size: 1.4rem;
+        color: #3190e8;
+        background: #fff;
+        .hot-city-tit{
+            width: 100%;
+            height: 4rem;
+            line-height: 4rem;
+            padding: 0 1.2rem;
+            border-bottom: 1px solid #ddd;
+            p{
+                font-size: 1.3rem;
+                color: #999;
+            }
+        }
+        .hot-city-list{
+            position: relative;
+            overflow: hidden;
+            ul{
+                position: relative;
+                overflow: hidden;
+                li{
+                    float: left;
+                    width: 25%;
+                    height: 4rem;
+                    line-height: 4rem;
+                    text-align: center;
+                    border: 1px solid #ddd;
+                    border-top: none;
+                }
+            }
+        }
+    }
+    .other-city{
+        font-size: 1.4rem;
+        color: #666;
+        background: #fff;
+        .other-city-tit{
+            width: 100%;
+            height: 4rem;
+            line-height: 4rem;
+            padding: 0 1.2rem;
+            border-bottom: 1px solid #ddd;
+            p{
+                font-size: 1.3rem;
+                color: #999;
+            }
+        }
+        .other-city-list{
+            position: relative;
+            overflow: hidden;
+            ul{
+                position: relative;
+                overflow: hidden;
+                li{
+                    float: left;
+                    width: 25%;
+                    height: 4rem;
+                    line-height: 4rem;
+                    text-align: center;
+                    border: 1px solid #ddd;
+                    border-top: none;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}
