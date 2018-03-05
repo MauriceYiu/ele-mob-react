@@ -53,7 +53,7 @@ class SelectCity extends Component {
                                     <ul>
                                         {
                                             item.cityList.map((innerItem, innerIndex) => {
-                                                return (<li onClick={()=>this.selCity(item)} key={innerIndex}>{innerItem.name}</li>);
+                                                return (<li onClick={()=>this.selCity(innerItem)} key={innerIndex}>{innerItem.name}</li>);
                                             })
                                         }
                                     </ul>

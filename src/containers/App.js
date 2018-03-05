@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App">
       <TransitionGroup>
           <CSSTransition
-              timeout={500}
+              timeout={5000}
               classNames="slide-in"
               key={this.props.location.pathname}
               >
