@@ -6,17 +6,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <TransitionGroup>
-          <CSSTransition
-              timeout={5000}
-              classNames="slide-in"
-              key={this.props.location.pathname}
-              >
-              <div>
-                {this.props.children}
-              </div>       
-          </CSSTransition>
-      </TransitionGroup>
+        <TransitionGroup>
+            <CSSTransition
+                timeout={600}
+                classNames="slide-in"
+                key={this.props.location.pathname}
+                >
+                <div>
+                  {this.props.children}
+                </div>       
+            </CSSTransition>
+        </TransitionGroup>
       </div>
     );
   }

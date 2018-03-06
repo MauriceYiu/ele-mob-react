@@ -62,6 +62,7 @@
                     text-align: center;
                     border: 1px solid #ddd;
                     border-top: none;
+                    border-left: none;
                 }
             }
         }
@@ -98,6 +99,7 @@
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
+                    border-left: none;
                 }
             }
         }

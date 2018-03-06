@@ -40,3 +40,30 @@ export const getOtherCityList = ()=>{
         }
     });
 }
+
+export const getNowSite = (cityId)=>{
+    return axios({
+        url:baseUrl+'/v1/cities/'+cityId,
+        method:'GET'
+    }).then(response=>{
+        if(response.status === ERR_OK){
+            return Promise.resolve(response.data);
+        }
+    });
+}
+
+export const searchSite = (cityId, keyWord) => {
+    return axios({
+      url: baseUrl+'/v1/pois',
+      method: 'GET',
+      params: {
+        type: 'search',
+        city_id: cityId,
+        keyword: keyWord
+      }
+    }).then(response => {
+      if (response.status === ERR_OK) {
+        return Promise.resolve(response.data);
+      }
+    })
+  }
