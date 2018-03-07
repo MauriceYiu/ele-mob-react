@@ -24,7 +24,7 @@ class City extends Component {
     render() {
         return (
             <div>
-                <NavHeader cityNameTit={this.state.cityNameTit} showBack={true} routerFun={this.props.router}>
+                <NavHeader title={this.state.cityNameTit} showBack={true} routerFun={this.props.router}>
                     <span className="change-city" onClick={this.toSelCity}>切换城市</span>
                 </NavHeader>
                 <div className="search-site">

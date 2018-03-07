@@ -13,7 +13,10 @@ class NavHeader extends Component {
                 <div>
                     <div id="nav-header">
                         {this.props.showBack?(<span className="arrow-left" onClick={this.goback}>{'<'}</span>):''}
-                        <span className="tit">{this.props.cityNameTit}</span>
+                        <span className="tit">{this.props.title.length>5?this.props.title.substr(0,9)+'...':'获取中...'}</span>
+                        {this.props.doShowMe?(
+                            <span className="me">Me</span>                            
+                        ):''}
                         {this.props.children}
                     </div>
                     <div style={{ width: "100%", height: "5rem", display: 'block' }}></div>
@@ -31,9 +34,6 @@ class NavHeader extends Component {
             );
         }
 
-    }
-    componentDidMount() {
-        //
     }
     goback(){
         this.props.routerFun.goBack(-1);
