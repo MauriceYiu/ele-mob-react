@@ -14,7 +14,7 @@ class Main extends Component {
             index: 0,
             title: '',
             menu: [],
-            paginationWidth: ''
+            paginationWidth: {}
         };
     }
     handleChangeIndex = index => {
@@ -79,6 +79,7 @@ class Main extends Component {
         this.setState({
             paginationWidth: this.pagination
         });
+        console.log(this.state.paginationWidth)
     }
     cityAddress(geohash) {
         getNowCityAddress(geohash).then(res => {

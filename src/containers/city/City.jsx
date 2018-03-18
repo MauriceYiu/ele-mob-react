@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import NavHeader from './../../components/navHeader/NavHeader';
 import { getNowSite, searchSite } from './../../api/site';
 import { saveLocal, getLocal, clearLocal } from './../../utils/localStorage';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as cityInfoActions from './../../actions/cityInfo';
 import './city.scss';
 
 class City extends Component {
@@ -87,6 +90,7 @@ class City extends Component {
         this.setState({
             selectedCity
         })
+        console.log(this.props)
     }
     toSelCity() {
         this.props.router.push('/');
@@ -134,8 +138,10 @@ class City extends Component {
         // console.log(oriSelectedData);
         let strVal = JSON.stringify(oriSelectedData);
         saveLocal('selectedCity', strVal);
-        let geohash = item.latitude+','+item.longitude;
-        this.props.router.push({pathname:'/main',query:{geohash}})
+        let geohash = item.latitude + ',' + item.longitude;
+        const { saveGeoHash } = this.props.actions;
+        saveGeoHash(geohash);
+        this.props.router.push({ pathname: '/main', query: { geohash } })
     }
     clearAll() {
         clearLocal();
@@ -145,4 +151,19 @@ class City extends Component {
     }
 }
 
-export default City;
+const mapStateToProps = (state) => {
+    return {
+        geohash: state.cityInfo
+    };
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        actions: bindActionCreators(cityInfoActions, dispatch)
+    };
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(City);
